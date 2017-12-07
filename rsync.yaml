@@ -1,0 +1,10 @@
+protocol_mapping:
+  "*": rsync
+
+pipelines:
+  fetch:
+    name: rsync
+    path: "rsync -av"
+    arguments:
+      "": from
+      " ": to
