@@ -1,0 +1,9 @@
+protocol_mapping:
+  "*": stat
+
+pipelines:
+  stat:
+    name: stat
+    path: "stat -Lc '%s'"
+    arguments:
+      "": file

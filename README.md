@@ -4,19 +4,21 @@ This repository contains some [looper](http://looper.readthedocs.io) `pipeline_i
 
 ## How it works
 
-You can run any of these actions on all samples of any [PEP-compatible project](http://pepkit.github.io) like so: 
+You can run any of these utilities on all samples of any [PEP-compatible project](http://pepkit.github.io) like so: 
 
 1. Point your project at one of these pipeline_interface files (I usually use a subproject)
 2. Specify the required sample attributes (by adding appropriate columns to your annotation)
 3. Run `looper` (be sure to activate the subproject if you specified one)
 
-So, for example, add this to your `project_config.yaml`:
+## For example...
+
+For example, to use the `rsync_piface.yaml` pipeline interface, add this to your `project_config.yaml`:
 
 ```{yaml}
 subprojects:
   rsync:
     metadata:
-      pipeline_interfaces: ${CODE}pifaces/rsync.yaml
+      pipeline_interfaces: ${CODE}pifaces/rsync_piface.yaml
 ```
 
 Then, add `from` and `to` columns with filenames to your `sample_annotation` (these are what `rsync` needs), and then run with:
@@ -29,8 +31,14 @@ This will run `rsync OLD NEW` for each sample in your project, allowing you to s
 
 Now here's detailed documentation of what each task does and what it requires.
 
-## `rsync.yaml`
+## Task `rsync`
 
-*Task*: Run rsync on files in your project for each sample
+*Task*: Runs rsync on files in your project for each sample, to sync remote data to a local file system (or vice versa), or to move files from one local filesystem to another.
 
-*Required columns*: `from` specifies the source filename; `to` specifies the destination
+*Required columns*: `from` specifies the source filename; `to` specifies the destination.
+
+## Task `filesize`
+
+*Task*: Returns the file size (in bytes) for files for each sample.
+
+*Required columns*: `file` specifying the path and filename to assess.
