@@ -1,6 +1,8 @@
+[![PEP compatible](http://pepkit.github.io/img/PEP-compatible-green.svg)](http://pepkit.github.io)
+
 # pifaces
 
-This repository contains some [looper](http://looper.readthedocs.io) `pipeline_interface` files, so you can run basic utilities on your looper projects.
+This repository contains some [looper](http://looper.readthedocs.io) `pipeline_interface` files, so you can run basic utilities on your [PEP](http://pepkit.github.io) projects using looper.
 
 ## How it works
 

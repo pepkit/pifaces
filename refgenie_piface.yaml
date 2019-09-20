@@ -1,0 +1,21 @@
+protocol_mapping:
+  "*": refgenie
+
+pipelines:
+  refgenie:
+    name: refgenie
+    path: "refgenie build"
+    arguments:
+      "--genome": genome
+      "--asset": asset
+    optional_arguments:
+      "--fasta": local_fa
+      "--gencode_gtf": local_gencode_gtf
+      "--ensembl_gtf": local_ensembl_gtf
+      "--gff": local_ensembl_rb
+    resources:
+      default:
+        file_size: "0"
+        cores: "4"
+        mem: "12000"
+        time: "01-00:00:00"
