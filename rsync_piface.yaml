@@ -6,5 +6,5 @@ pipelines:
     name: rsync
     path: "rsync -av"
     arguments:
-      "": from
-      " ": to
+      "": src
+      " ": dest

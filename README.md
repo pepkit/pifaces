@@ -21,7 +21,7 @@ subprojects:
       pipeline_interfaces: ${CODE}pifaces/rsync_piface.yaml
 ```
 
-Then, add `from` and `to` columns with filenames to your `sample_annotation` (these are what `rsync` needs), and then run with:
+Then, add `src` and `dest` columns with filenames to your `sample_annotation` (these are what `rsync` needs), and then run with:
 
 ```
 looper run project_config.yaml --sp rsync
@@ -35,7 +35,7 @@ Now here's detailed documentation of what each task does and what it requires.
 
 *Task*: Runs rsync on files in your project for each sample, to sync remote data to a local file system (or vice versa), or to move files from one local filesystem to another.
 
-*Required columns*: `from` specifies the source filename; `to` specifies the destination.
+*Required columns*: `src` specifies the source filename; `dest` specifies the destination.
 
 ## Task `filesize`
 
