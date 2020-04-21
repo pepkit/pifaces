@@ -2,4 +2,4 @@ pipeline_name: tar_fastq
 project_pipeline:
   input_schema: tar_fastq_input_schema.yaml
   command_template: >
-    tar -czpf {looper.output_folder}/inputs.tgz {% for s in samples %}{ s.read1 } {% endfor %}{% for s in samples %}{% if s.read2 is defined %}{ s.read2 } {% endif %}{% endfor %}
+    tar -cpf {looper.output_folder}/inputs.tgz {% for s in samples %}{ s.read1 } {% endfor %}{% for s in samples %}{% if s.read2 is defined %}{ s.read2 } {% endif %}{% endfor %}
