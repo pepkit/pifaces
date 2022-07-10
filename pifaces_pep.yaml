@@ -3,4 +3,4 @@ project_modifiers:
   amend:
     tar_fastq:
       looper:
-        pipeline_interfaces: tar_fastq_piface.yaml
+        pipeline_interfaces: ${PIFACES}/tar_fastq_piface.yaml
