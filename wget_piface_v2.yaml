@@ -1,0 +1,6 @@
+pipeline_name: wget
+pipeline_type: sample
+command_template: >
+  wget -nc -c {sample.src} 
+  {% if sample.destdir is defined %} -P {sample.destdir}{% endif %}
+  {% if sample.destfile is defined %} -O {sample.destfile}{% endif %}

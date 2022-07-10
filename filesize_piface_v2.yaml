@@ -1,0 +1,5 @@
+pipeline_name: filesize
+pipeline_type: sample
+
+command_template: >
+  stat -Lc '%s' {sample.file}
